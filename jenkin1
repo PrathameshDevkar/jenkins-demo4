@@ -1,0 +1,15 @@
+pipeline{
+  agent any
+  stages{
+    stage('fetch_code'){
+      steps{
+        git branch: 'main', url: 'https://github.com/PrathameshDevkar/jenkins-demo4'
+      }
+    }
+    stage('run_code'){
+      steps{
+        sh 'python3 code.py'
+      }
+    }
+  }
+}
